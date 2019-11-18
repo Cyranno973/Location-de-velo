@@ -1,0 +1,429 @@
+@import url('https://fonts.googleapis.com/css?family=Gloria+Hallelujah|Lato|Luckiest+Guy|Roboto&display=swap');
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: sans-serif;
+}
+
+header {
+  position: absolute;
+  top: 0;
+  left: 0;
+  padding: 0 100px;
+  background-color: #262626;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+header #logo {
+  height: 50px;
+  line-height: 50px;
+  float: left;
+  font-weight: bold;
+  font-size: 35px;
+  background-image: url("/images/gold1.jpg");
+  background-size: cover;
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+  font-family: 'Gloria Hallelujah', cursive;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}
+
+header nav {
+  float: right;
+  transition: all 0.5s linear;
+}
+
+header nav ul {
+  margin: 0;
+  padding: 0;
+  display: flex;
+}
+
+header nav ul li {
+  list-style-type: none;
+}
+
+header nav ul li a {
+  height: 50px;
+  line-height: 50px;
+  padding: 0 20px;
+  color: #fff;
+  text-decoration: none;
+  display: block;
+}
+
+header nav ul li a:hover,
+header nav ul li a.active {
+  color: #fff;
+  background-color: #2196f3;
+}
+
+.menu-toggle {
+  color: #fff;
+  float: right;
+  line-height: 50px;
+  font-size: 24px;
+  cursor: pointer;
+  display: none;
+}
+
+/*  fin du header */
+.container {
+  position: relative;
+  margin-top: 50px;
+  width: 100%;
+ height: calc(100vh - 50px);
+  
+}
+
+/*
+h1 {
+
+  margin: 0;
+  text-align: center;
+  background-image: url("/images/gold.jpg");
+  background-size: cover;
+  background-clip: text;
+  -webkit-background-clip: text;
+  font-size: 50px;
+  color: transparent;
+  font-family: 'Luckiest Guy', cursive;
+  letter-spacing: 2px;
+  */
+}
+
+.slide {
+  width: 50%;
+  display: flex;
+}
+
+#img-carousel {
+  height: calc(100vh - 50px);
+  width: 100%;
+}
+
+.carousel {
+  position: absolute;
+  width: 100%;
+  height: calc(100vh - 50px);
+}
+
+#text-carousel {
+  margin: 0px;
+  padding: 30px;
+  width: 48%;
+  position: absolute;
+  text-align: center;
+  font-size: 31px;
+  color: #fff;
+  /* z-index: 2; */
+  left: 26%;
+  top: 26%;
+  font-weight: bold;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+#btncontrols {
+  position: relative;
+  bottom: 332px;
+  display: flex;
+  font-size: 76px;
+  color: white;
+  width: 100%;
+  justify-content: flex-end;
+  opacity: 0.8;
+}
+
+#btnnext {
+  position: absolute;
+  right: 25px;
+}
+
+#btnprev {
+  position: absolute;
+  left: 25px;
+}
+
+#start-stop {
+  display: flex;
+  bottom: 53px;
+  position: relative;
+  font-size: 31px;
+  color: #FF0;
+  margin-left: 42px;
+}
+
+#btnplay {
+  margin-right: 28px;
+  display: none;
+}
+
+
+
+#reservation {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: 100%;
+  box-sizing: border-box;
+  margin: 30px 0px 0px ;
+ 
+}
+
+.container-map {
+  display: flex;
+  width: 47%;
+  height: 336px;
+  padding: 20px 35px;
+  box-sizing: border-box;
+  
+}
+
+#maps {
+  width: 100%;
+}
+
+
+.stationform {
+  width: 52%;
+  height: 100%;
+ 
+  padding: 20px 40px;
+}
+
+
+
+
+
+#tableau {
+ 
+  color: #555;
+  margin:  0;
+  padding: 0;
+  background-color: #f2f2f2; 
+
+}
+
+
+ul li {
+  list-style-type: none;
+}
+
+#tableau li {
+padding:0 0 10px 6px;
+  text-align: left;
+  width: 100%;
+
+  line-height: 39px; 
+}
+
+.tableLast {
+  background-color: ;
+}
+
+#tableau li span {
+  display: inline;
+  text-align: center;
+  font-weight: 400;
+  font-size: 15px;
+  width: 100%;
+}
+
+#nom, #prenom {
+  display: block;
+  margin: auto;
+  margin-bottom: 51px;
+}
+
+#btn-reserver {
+  border: none;
+  display: inline-block;
+  text-decoration: none;
+  text-align: center;
+  font-size: 35px;
+  text-transform: uppercase;
+  font-family: 'Luckiest Guy', cursive;
+  font-weight: bold;
+   color: #FFD700;
+  background-color: #ff5e57;
+  margin-top: 20px;
+  transition: all 0.5;
+  width: 208px;
+  height: 3rem;
+}
+
+
+
+
+#envoieReservation, #annulationReservation {
+  border: none;
+  display: inline-block;
+  text-decoration: none;
+  text-align: center;
+  font-size: 30px;
+  text-transform: uppercase;
+  font-family: 'Luckiest Guy', cursive;
+  font-weight: bold;
+   color: #FFD700; 
+  margin-top: 10px;
+  margin-right: 9px;
+  transition: all 0.5;
+  padding-top: 8px;
+}
+
+#envoieReservation {
+   background-color: #05c46b; 
+}
+
+#annulationReservation {
+   background-color: #ff5e57; 
+}
+
+.sub-title {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  text-align: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  text-transform: uppercase;
+  background-image: url("/images/gold.jpg");
+  background-size: cover;
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+  font-size: 40px;
+  font-family: 'Luckiest Guy', cursive;
+} 
+
+.container-formulaire-canvas {
+  width: 100%;
+  display: flex;
+  align-items: center;
+
+}
+
+#formulaire {
+  margin-top: 20px;
+  display: block;
+  text-align: center;
+  width: 100%;
+}
+
+
+.container-canvas-btn {
+  width: 50%;
+  padding-left: 58px;
+  display: none;
+}
+
+.container-canvas {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+canvas {
+  border: 1px solid black;
+  position: static;
+
+}
+
+.canvasbtn {
+  display: flex;
+  justify-content: center;
+}
+
+.input-group input {
+  padding: 0px;
+  border: none;
+  border-bottom: 1px solid black;
+  height: 4rem;
+  width: 390px;
+  background-color: transparent;
+  font-size: 1rem;
+  margin: 0 0 20px 0;
+  border-radius: 0;
+  outline: none;
+  -webkit-box-sizing: content-box;
+  box-sizing: content-box;
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
+}
+
+#aidePseudo {
+  color: #AA6C39;
+  padding: 20px;
+  margin-bottom: 5px;
+  display: none;
+  background-color: #FFD1AA;
+}
+
+.input-group input:focus {
+  border-bottom: 2px solid #FFD700;
+  padding: 16px;
+}
+
+footer {
+  background-color: #111;
+  color: #fff;
+  padding: 25px 15px;
+}
+
+.droits {
+  text-align: center;
+  margin-bottom: 0;
+}
+
+#departMinuteur {
+  font-size: 40px;
+  color: #fff;
+}
+
+@media (max-width:991px) {
+  header {
+    overflow: hidden;
+    padding: 0 20px;
+    height: 200px;
+    width: 100%;
+    
+   
+  }
+
+  .menu-toggle {
+    display: block;
+  }
+
+  header nav {
+    position: absolute;
+    width: 100%;
+    height: 101px;
+    background-color: #333;
+    top: 50px;
+    right: -100%;
+    z-index: 2;
+    
+    
+  }
+
+  header nav.active {
+    right: 0;
+  }
+
+  header nav ul {
+    display: block;
+    text-align: center;
+  }
+
+  header nav ul a {
+    border-bottom: 1px solid rgba(0, 0, 0.2)
+  }
+}
