@@ -36,7 +36,7 @@ class Signature {
   }
   effacer() {
 
-    var m = confirm("voulez vous vraiment annuler");
+    var m = confirm("Voulez vous vraiment annuler votre réservation?");
     if (m) {
       this.context.clearRect(0, 0, this.w, this.h);
       document.getElementById("canvas").style.display = "none";
