@@ -146,6 +146,11 @@ var reserveStation = document.getElementById("minuteurhtml");
 var canvasElt = document.getElementById("canvas");
 signatureElt = new Signature("canvas");
 var containerCanvasElt = document.querySelector(".container-canvas-btn ");
+
+
+///////////////////////////// evenement souris //////////////////////////////
+///////////////////////////// evenement souris //////////////////////////////
+
 canvasElt.addEventListener('mousedown', (e) => {
   signatureElt.x = e.clientX - canvasElt.getBoundingClientRect().left;
   signatureElt.y = e.clientY - canvasElt.getBoundingClientRect().top;
@@ -173,9 +178,40 @@ window.addEventListener('mouseup', (e) => {
   //  console.log("mousemove ici c'est X " + this.x + " ici c'est Y " + this.y);
 
 });
-// ma fonction permettant le dessin
+
+///////////////////////////// evenement tactile //////////////////////////////
+///////////////////////////// evenement tactile //////////////////////////////
 
 
+
+canvasElt.addEventListener('touchstart', (e) => {
+  signatureElt.x = e.clientX - canvasElt.getBoundingClientRect().left;
+  signatureElt.y = e.clientY - canvasElt.getBoundingClientRect().top;
+  signatureElt.saDessine = true;
+
+  console.log("yess du tactile");
+  
+});
+
+
+canvasElt.addEventListener('touchmove', (e) => {
+  if (signatureElt.saDessine === true) {
+
+    signatureElt.dessiner(signatureElt.context, signatureElt.x, signatureElt.y, e.clientX - canvasElt.getBoundingClientRect().left, e.clientY - canvasElt.getBoundingClientRect().top);
+    signatureElt.x = e.clientX - canvasElt.getBoundingClientRect().left;
+    signatureElt.y = e.clientY - canvasElt.getBoundingClientRect().top;
+    signatureElt.dessinPresent = true;
+   console.log("sa bouge");
+   
+  }
+});
+
+window.addEventListener('touchend', (e) => {
+  signatureElt.saDessine = false;
+ console.log("finish");
+ 
+
+});
 
 
 
