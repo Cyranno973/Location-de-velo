@@ -80,24 +80,10 @@ header nav ul li a.active {
   
 }
 
-/*
-h1 {
 
-  margin: 0;
-  text-align: center;
-  background-image: url("/images/gold.jpg");
-  background-size: cover;
-  background-clip: text;
-  -webkit-background-clip: text;
-  font-size: 50px;
-  color: transparent;
-  font-family: 'Luckiest Guy', cursive;
-  letter-spacing: 2px;
-  */
-}
 
 .slide {
-  width: 50%;
+ 
   display: flex;
 }
 
@@ -120,7 +106,7 @@ h1 {
   text-align: center;
   font-size: 31px;
   color: #fff;
-  /* z-index: 2; */
+  
   left: 26%;
   top: 26%;
   font-weight: bold;
@@ -221,16 +207,14 @@ padding:0 0 10px 6px;
   line-height: 39px; 
 }
 
-.tableLast {
-  background-color: ;
-}
+
 
 #tableau li span {
   display: inline;
   text-align: center;
   font-weight: 400;
   font-size: 15px;
-  width: 100%;
+
 }
 
 #nom, #prenom {
@@ -426,6 +410,20 @@ footer {
   header nav ul a {
     border-bottom: 1px solid rgba(0, 0, 0.2)
   }
+  #text-carousel {
+    margin: 0px;
+    padding: 30px;
+    width: 48%;
+    position: absolute;
+    text-align: center;
+    font-size: 20px;
+    color: #fff;
+    
+    left: 20%;
+    top: 26%;
+    font-weight: bold;
+    background-color: rgba(0, 0, 0, 0.5);
+  }
   #reservation {
     display: block;
     width: 100%;
@@ -446,7 +444,7 @@ footer {
   margin: auto;
 }
 .input-group input {
-  /* padding: 0px; */
+ 
   border: none;
   border-bottom: 1px solid black;
   height: 4rem;
