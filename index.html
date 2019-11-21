@@ -49,7 +49,7 @@
     <div class="carousel">
       <!-- <h1>Réserver votre vélo en 2 clic! </h1> -->
       <div class="slide">
-        <img id="img-carousel" src="js" alt=" image de vélo et de carte" >
+        <img id="img-carousel" src="js" alt=" image de vélo et de carte">
       </div>
       <p id="text-carousel"></p>
 
@@ -66,85 +66,88 @@
     </div>
   </div>
 
-    <!--  <h2 class="sub-title">réservez</h2> -->
-   
-
-     <!--  <div class="container-reservation">  --> 
-     <div id="reservation">
-
-        <div class="container-map">
-          <div id="maps">pici la carte maps</div>
-        </div>
-
-        <div class="stationform">
-          
-            <ul id="tableau">
-
-              <li><strong>Nom : </strong><span id="viewnom"></span></li>
-              <li><strong>Status : </strong><span id="viewstatus"></span></li>
-              <li><strong>Adresse : </strong><span id="viewadress"></span></li>
-              <li><strong>Capacité : </strong><span id="viewcapacite"></span></li>
-              <li><strong>Vélos Disponibles : </strong><span id="viewvelodisponible"></span></li>
-              <li class=" "><strong>Emplacement disponible : </strong><span id="viewemplacementlibre"></span></li>
-            </ul>
-         
-        </div>
+  <!--  <h2 class="sub-title">réservez</h2> -->
 
 
-      </div>
-      
+  <!--  <div class="container-reservation">  -->
+  <div id="reservation">
 
-  <!--   </div> --> 
-
-  <form name="formReservation" action="#" method="get" id="formulaire">
-    <div class="input-group">
-      <span id="aidePseudo"></span><br>
-
-      <label for="nom">Nom</label>
-      <input type="text" name="nom" value="" id="nom" required>
-
-      <label for="prenom">Prenom</label>
-      <input type="text" name="prenom" value="" id="prenom" required>
-
-      <input type="submit" value="reserver" id="btn-reserver">
+    <div class="container-map">
+      <div id="maps">pici la carte maps</div>
     </div>
 
-  </form>
+    <div class="stationform">
+
+      <ul id="tableau">
+
+        <li><strong>Nom : </strong><span id="viewnom"></span></li>
+        <li><strong>Status : </strong><span id="viewstatus"></span></li>
+        <li><strong>Adresse : </strong><span id="viewadress"></span></li>
+        <li><strong>Capacité : </strong><span id="viewcapacite"></span></li>
+        <li><strong>Vélos Disponibles : </strong><span id="viewvelodisponible"></span></li>
+        <li class=" "><strong>Emplacement disponible : </strong><span id="viewemplacementlibre"></span></li>
+      </ul>
+      <div class="container-globe">
+        <div class="login-form">
+          <h3>Reservation</h3>
+          <form name="formReservation" action="#" method="get" id="formulaire">
 
 
-    <div class="container-formulaire-canvas">
-      <div class="container-canvas-btn">
-        <div class="container-canvas">
-          <canvas id="canvas" width="500" height="300"></canvas>
-        </div>
+            <input type="text" name="nom" value="" id="nom" placeholder="Nom" required>
 
-        <div class="canvasbtn">
-          <input type="submit"  value="Envoyer" id="envoieReservation">
-          <input type="reset"   value="Annuler" id="annulationReservation">
+            <input type="text" name="prenom" value="" id="prenom" placeholder="Prenom" required>
+
+            <input type="submit" value="reserver" id="btn-reserver">
         </div>
       </div>
-
-
-     
     </div>
 
-  <footer id="cadrereservation">
-    <div id="etatreservation">
-      <h2>Etat de votre réservation</h2>
-      <p id="minuteurhtml">Aucune réservation en cours.</p>
-    </div>
-    <span id="minuteurStart"></span>
-    <p class="droits">©Cyranno. Tous droits réservés</p>
+    </form>
 
-  </footer>
-  <script src="https://unpkg.com/leaflet@1.3.1/dist/leaflet.js"></script>
-  <script src="https://unpkg.com/leaflet.markercluster@1.3.0/dist/leaflet.markercluster-src.js"></script>
-  <script src="js/diapo.js"></script>
-  <script src="js/ajax.js"></script>
-  <script src="js/maps.js"></script>
-  <script src="js/timer.js"></script>
-  <script src="js/canvas.js"></script>
-  <script src="js/main.js"></script>
+  </div>
+
+
+
+  </div>
+
+
+
+
+
+
+  <div class="container-formulaire-canvas">
+    <div class="container-canvas-btn">
+      <div class="container-canvas">
+        <canvas id="canvas"></canvas>
+      </div>
+
+      <div class="canvasbtn">
+        <input type="submit" value="Envoyer" id="envoieReservation">
+        <input type="reset" value="Annuler" id="annulationReservation">
+      </div>
+    </div>
+
+
+
+
+
+    <footer id="cadrereservation">
+      <div id="etatreservation">
+        <h2>Etat de votre réservation</h2>
+        <p id="minuteurhtml">Aucune réservation en cours.</p>
+      </div>
+      <span id="minuteurStart"></span>
+      <p class="droits">©Cyranno. Tous droits réservés</p>
+
+    </footer>
+    <script src="https://unpkg.com/leaflet@1.3.1/dist/leaflet.js"></script>
+    <script src="https://unpkg.com/leaflet.markercluster@1.3.0/dist/leaflet.markercluster-src.js"></script>
+    <script src="js/diapo.js"></script>
+    <script src="js/ajax.js"></script>
+    <script src="js/maps.js"></script>
+    <script src="js/timer.js"></script>
+    <script src="js/canvas.js"></script>
+    <script src="js/main.js"></script>
 
 
 </body>

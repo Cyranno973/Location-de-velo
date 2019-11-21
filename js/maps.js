@@ -9,29 +9,15 @@ class Map {
       maxZoom: 20,
     });
 
-    this.iconGreen = new L.Icon({
-      iconUrl: 'https://cdn.rawgit.com/pointhi/leaflet-color-markers/master/img/marker-icon-2x-green.png',
-      shadowUrl: 'https://cdnjs.cloudflare.com/ajax/libs/leaflet/0.7.7/images/marker-shadow.png',
-      iconSize: [25, 41],
-      iconAnchor: [12, 41],
-      popupAnchor: [1, -34],
-      shadowSize: [41, 41]
-    });
-    this.iconRed = new L.Icon({
-      iconUrl: 'https://cdn.rawgit.com/pointhi/leaflet-color-markers/master/img/marker-icon-2x-red.png',
-      shadowUrl: 'https://cdnjs.cloudflare.com/ajax/libs/leaflet/0.7.7/images/marker-shadow.png',
-      iconSize: [25, 41],
-      iconAnchor: [12, 41],
-      popupAnchor: [1, -34],
-      shadowSize: [41, 41]
-    });
+  
 
     this.idMap = document.getElementById("this.idMap");
 
     this.nomMap = L.map(idMap, {
       center: center,
       zoom: zoom,
-      layers: [this.OpenStreetMap_France]
+      layers: [this.OpenStreetMap_France],
+   
     });
 
 
@@ -83,6 +69,14 @@ class Map {
 
         marker.addEventListener("click", function() {
           console.log(this.stationNumber);
+          var containerMapElt = document.querySelector(".container-map");
+          var containerStationFormElt = document.querySelector(".stationform");
+          console.log(containerMapElt);
+          console.log(containerStationFormElt);
+         
+
+          containerStationFormElt.style.display="block";
+          
           // crerr l'url pour recuperer les info de la station
           var urlStation = " https://api.jcdecaux.com/vls/v3/stations/" + this.stationNumber + "?contract=marseille&apiKey=0e4c54d917fae8413e3fb4345d92d596c0894cfc";
           //      console.log(urlStation);

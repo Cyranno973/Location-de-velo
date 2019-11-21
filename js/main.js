@@ -6,7 +6,7 @@
 //menu taille telephone tablette
 var menuElt = document.querySelector(".menu-toggle");
 var navElt = document.querySelector("nav");
-console.log(menuElt);
+// console.log(menuElt);
 menuElt.addEventListener('click', (e) => {
   console.log("jai cliquer sur le menu");
   if (navElt.classList.contains("active") == true) {
@@ -185,11 +185,14 @@ window.addEventListener('mouseup', (e) => {
 
 
 canvasElt.addEventListener('touchstart', (e) => {
-  signatureElt.x = e.clientX - canvasElt.getBoundingClientRect().left;
-  signatureElt.y = e.clientY - canvasElt.getBoundingClientRect().top;
+ 
+  signatureElt.x = e.touches[0].clientX - canvasElt.getBoundingClientRect().left;
+  signatureElt.y = e.touches[0].clientY  - canvasElt.getBoundingClientRect().top;
   signatureElt.saDessine = true;
-
-  console.log("yess du tactile");
+  console.log("event touchstart");
+  console.log("signatureElt.x  : "+signatureElt.x );
+  console.log("signatureElt.y : "+signatureElt.y );
+  
   
 });
 
@@ -197,11 +200,19 @@ canvasElt.addEventListener('touchstart', (e) => {
 canvasElt.addEventListener('touchmove', (e) => {
   if (signatureElt.saDessine === true) {
 
-    signatureElt.dessiner(signatureElt.context, signatureElt.x, signatureElt.y, e.clientX - canvasElt.getBoundingClientRect().left, e.clientY - canvasElt.getBoundingClientRect().top);
-    signatureElt.x = e.clientX - canvasElt.getBoundingClientRect().left;
-    signatureElt.y = e.clientY - canvasElt.getBoundingClientRect().top;
+// console.log("e.clientX - canvasElt.getBoundingClientRect().left"+e.touches[0].clientX - canvasElt.getBoundingClientRect().left);
+// console.log("e.clientY - canvasElt.getBoundingClientRect().left"+e.touches[0].clientY - canvasElt.getBoundingClientRect().top);
+
+
+    signatureElt.dessiner(signatureElt.context, signatureElt.x, signatureElt.y, e.touches[0].clientX - canvasElt.getBoundingClientRect().left, e.touches[0].clientY - canvasElt.getBoundingClientRect().top);
+    signatureElt.x = e.touches[0].clientX - canvasElt.getBoundingClientRect().left;
+    signatureElt.y = e.touches[0].clientY - canvasElt.getBoundingClientRect().top;
     signatureElt.dessinPresent = true;
-   console.log("sa bouge");
+
+    console.log("event touchmoove");
+    
+    console.log("signatureElt.x  : "+signatureElt.x );
+    console.log("signatureElt.y : "+signatureElt.y );
    
   }
 });
