@@ -146,11 +146,6 @@ var reserveStation = document.getElementById("minuteurhtml");
 var canvasElt = document.getElementById("canvas");
 signatureElt = new Signature("canvas");
 var containerCanvasElt = document.querySelector(".container-canvas-btn ");
-
-
-///////////////////////////// evenement souris //////////////////////////////
-///////////////////////////// evenement souris //////////////////////////////
-
 canvasElt.addEventListener('mousedown', (e) => {
   signatureElt.x = e.clientX - canvasElt.getBoundingClientRect().left;
   signatureElt.y = e.clientY - canvasElt.getBoundingClientRect().top;
@@ -178,7 +173,9 @@ window.addEventListener('mouseup', (e) => {
   //  console.log("mousemove ici c'est X " + this.x + " ici c'est Y " + this.y);
 
 });
+// ma fonction permettant le dessin
 
+<<<<<<< HEAD
 ///////////////////////////// evenement tactile //////////////////////////////
 ///////////////////////////// evenement tactile //////////////////////////////
 
@@ -221,8 +218,9 @@ window.addEventListener('touchend', (e) => {
   signatureElt.saDessine = false;
  console.log("finish");
  
+=======
+>>>>>>> parent of 229c33c... ajout de commentaire pour la clarter
 
-});
 
 
 
