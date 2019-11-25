@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Location de Velo</title>
+
+
+  <!-- CSS Perso -->
+  <link rel="stylesheet" href="css/style.css">
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.css">
+
+
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.3.1/dist/leaflet.css" />
+
+  <!-- cluster markergroup -->
+  <link rel="stylesheet" href="https://unpkg.com/leaflet.markercluster@1.3.0/dist/MarkerCluster.css" />
+  <link rel="stylesheet" href="https://unpkg.com/leaflet.markercluster@1.3.0/dist/MarkerCluster.Default.css" />
+
+  <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+  <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+  <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.2/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+      <![endif]-->
+</head>
+
+
+<body>
+
+  <header>
+    <div id="logo">
+      Vel loca
+    </div>
+    <nav>
+      <ul>
+        <li><a href="#" class="active">Mode d'emploi</a></li>
+        <li><a href="#tableau">Reservation</a></li>
+      </ul>
+    </nav>
+    <div class="menu-toggle">
+      <i class="fa fa-bars" aria-hidden="true"></i>
+    </div>
+  </header>
+  <div class="container">
+    <div class="carousel">
+      <!-- <h1>Réserver votre vélo en 2 clic! </h1> -->
+      <div class="slide">
+        <img id="img-carousel" src="js" alt=" image de vélo et de carte">
+      </div>
+      <p id="text-carousel"></p>
+
+      <div id="btncontrols">
+        <div id="btnnext"><i class="fas fa-angle-right"></i></div>
+        <div id="btnprev"><i class="fas fa-angle-left"></i></div>
+      </div>
+
+      <div id="start-stop">
+        <div id="btnplay"><i class="fas fa-play"></i></div>
+        <div id="btnstop"><i class="fas fa-stop"></i></div>
+
+      </div>
+    </div>
+  </div>
+
+
+
+
+  <div id="reservation">
+
+    <div class="container-map">
+      <div id="maps">pici la carte maps</div>
+    </div>
+
+    <div class="stationform">
+
+      <ul id="tableau">
+        <li><strong>Status : </strong><span id="viewstatus"></span></li>
+        <li><strong>Nom : </strong><span id="viewnom"></span></li>
+        
+        <li><strong>Adresse : </strong><span id="viewadress"></span></li>
+        <li><strong>Capacité : </strong><span id="viewcapacite"></span></li>
+        <li><strong>Vélos Disponibles : </strong><span id="viewvelodisponible"></span></li>
+        <li ><strong>Emplacement disponible : </strong><span id="viewemplacementlibre"></span></li>
+      </ul>
+      <div class="container-globe">
+        <div class="login-form">
+          <h3>Reservation</h3>
+          <form name="formReservation" action="#" method="get" id="formulaire">
+
+
+            <input type="text" name="nom" value="" id="nom" placeholder="Nom" required>
+
+            <input type="text" name="prenom" value="" id="prenom" placeholder="Prenom" required>
+
+            <input type="submit" value="reserver" id="btn-reserver">
+          </form>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+
+
+  
+
+
+
+
+
+
+  <div class="container-formulaire-canvas">
+    <div class="container-canvas-btn">
+      <div class="container-canvas">
+        <canvas id="canvas" width="400px" height="200px"></canvas>
+      </div>
+
+      <div class="canvasbtn">
+        <input type="submit" value="Envoyer" id="envoieReservation">
+        <input type="reset" value="Annuler" id="annulationReservation">
+      </div>
+    </div>
+  </div>
+
+
+
+
+
+    <footer id="cadrereservation">
+      <div id="etatreservation">
+        <h2>Etat de votre réservation</h2>
+        <p id="minuteurhtml">Aucune réservation en cours.</p>
+      </div>
+      <span id="minuteurStart"></span>
+      <p class="droits">©Cyranno. Tous droits réservés</p>
+
+    </footer>
+    <script src="https://unpkg.com/leaflet@1.3.1/dist/leaflet.js"></script>
+    <script src="https://unpkg.com/leaflet.markercluster@1.3.0/dist/leaflet.markercluster-src.js"></script>
+    <script src="js/diapo.js"></script>
+    <script src="js/ajax.js"></script>
+    <script src="js/maps.js"></script>
+    <script src="js/timer.js"></script>
+    <script src="js/canvas.js"></script>
+    <script src="js/main.js"></script>
+
+
+</body>
+
+
+</html>
