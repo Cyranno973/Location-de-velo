@@ -34,7 +34,7 @@ class Main {
     // tableau images
 
     var tabImgs = [];
-    tabImgs.push("images/img1.jpg");
+    tabImgs.push("images/img1.png");
     tabImgs.push("images/img2.jpg");
     tabImgs.push("images/img3.jpg");
 
@@ -134,7 +134,7 @@ class Main {
     ////////////////////////////// Minuteur //////////////////////////////
     ////////////////////////////// Minuteur //////////////////////////////
     ////////////////////////////// Minuteur //////////////////////////////
-    var tpsRestant = 9000;
+    var tpsRestant = 120000;
     var timerElt = new Timer(tpsRestant);
 
     var reserveStation = document.getElementById("minuteurhtml");
@@ -275,9 +275,9 @@ class Main {
 
 
 
-        var aidePseudoElt = document.getElementById("aidePseudo");
-        aidePseudoElt.textContent = "Veuillez saisir un nom et prenom valide.";
-        aidePseudoElt.style.display = "inline-block";
+        // var aidePseudoElt = document.getElementById("aidePseudo");
+        // aidePseudoElt.textContent = "Veuillez saisir un nom et prenom valide.";
+        // aidePseudoElt.style.display = "inline-block";
       }
 
 
@@ -294,11 +294,8 @@ class Main {
 
     confirmationReservation.addEventListener('click', (e) => {
 
-      if (timerElt.minuteurLancer === false) {
+      if (signatureElt.dessinPresent === true) {
         console.log("le minuteur n'est pas actif");
-
-
-        if (signatureElt.dessinPresent === true) {
 
           containerCanvasElt.style.display = "none";
           // document.getElementById("canvas").style.display = "block";
@@ -309,28 +306,21 @@ class Main {
 
           reserveStation.textContent = "Une reservation au nom de : " + localStorage.getItem("nomUser")+" "+localStorage.getItem("prenomUser") + " est en cours à la station : " + stationReserver;
 
+          timerElt.actualisationTempsRestant(tpsRestant);
+          clearInterval(timerElt.interval);
           timerElt.interval = setInterval(function () {
 
             timerElt.minuteur();
 
           }, 1000);
           console.log('ma reservation est confirmer');
-        } else {
-          console.log("signatureElt.dessinPresent false");
-        }
+        
 
-
-
-      } else {
-        console.log("le minuteur est déja lancer   ");
 
       }
-
-
-
-
-
-
+      else{
+        alert("Veuillez signer !");
+      }
 
     });
 
@@ -353,13 +343,14 @@ class Main {
     ///////////////////////////// Actulisation de la page //////////////////////////////
     ///////////////////////////// Actulisation de la page //////////////////////////////
     window.addEventListener('load', (event) => {
-      console.log('La page est pleinement charger');
+      // console.log('La page est pleinement charger');
 
       var nomStocker = localStorage.getItem("nomUser");
       var preNomStocker = localStorage.getItem("prenomUser");
 
-      var minElt = sessionStorage.getItem('min');
-      var secElt = sessionStorage.getItem('sec');
+      var minElt = Number(sessionStorage.getItem('min'));
+      var secElt = Number(sessionStorage.getItem('sec'));
+console.log("min :"+minElt+" sec: "+secElt);
 
       if ((minElt != null) && (secElt != null)) {
 
@@ -373,7 +364,7 @@ class Main {
 
         }, 1000);
       } else {
-        console.log("pas de reservation en cours");
+      //  console.log("pas de reservation en cours");
 
       }
 
@@ -384,11 +375,11 @@ class Main {
       if ((nomStocker != null) && (preNomStocker != null)) {
 
 
-        console.log("Il y a un prenom et un nom stocker");
+    //    console.log("Il y a un prenom et un nom stocker");
         document.getElementById('nom').value = nomStocker;
         document.getElementById('prenom').value = preNomStocker;
       } else {
-        console.log("Il y a aucun nom ou prenom stocker.");
+       // console.log("Il y a aucun nom ou prenom stocker.");
       }
 
 

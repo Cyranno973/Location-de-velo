@@ -1,17 +1,6 @@
 
+capture d'ecran des differentes etatpes de reservation 
+nettoyer le code 
+mettre en ligne  le code 
 
 
-
-la 2 eme resevation doit ecraser la 1 ere 
-
-si ma reservation a expirer et une nouvelle reservation est faite le compteur doit redemmarer 
-
-//////////////////////////////////fait////////fait////fait/////////fait//////////////////////
-
-
-apres rafraichissement de la page le nom de la station disparait 
-dans le message de la reservation  inclure le nom et le prenon
-
-a expiration du delai effacer le nom de la station précdément reserver " aucune resvation encours "
-
-quand je clique sur un marker si velo dispo est = 0 bouton reserver none

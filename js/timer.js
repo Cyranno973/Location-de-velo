@@ -8,6 +8,8 @@ class Timer {
 
 
   actualisationTempsRestant(tempsRestant) {
+    console.log(" actulisation :"+ tempsRestant);
+    
     this.tempsRestant = tempsRestant;
   }
 
@@ -15,6 +17,7 @@ class Timer {
 
   minuteur() {
     if (this.tempsRestant > 0) {
+
 
       var uneSeconde = 1000;
       this.tempsRestant -= uneSeconde; // la meme chose que tempsRestant= tempsRestant - uneSeconde;
@@ -50,13 +53,16 @@ class Timer {
       sessionStorage.removeItem("min");
       sessionStorage.removeItem("sec");
       sessionStorage.removeItem("stationClick");
-      localStorage.removeItem("nomUser");
-      localStorage.removeItem("prenomUser");
+      // localStorage.removeItem("nomUser");
+      // localStorage.removeItem("prenomUser");
       this.minuteurLancer = false;
 
 
     }
 
   }
+
+  
+ 
 
 }

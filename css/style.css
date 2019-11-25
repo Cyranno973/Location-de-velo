@@ -261,7 +261,8 @@ ul li {
   outline: none;
   font-size: 14px;
   letter-spacing: 1px;
-  color: #820d0d;
+  color: #fefefe;
+  font-weight: 800;
   text-transform: uppercase;
   border: none;
   background: rgba(255, 255, 255, 0.1);
