@@ -17,28 +17,20 @@ class Diaporama {
   next() {
     // console.log("next");
     this.currentPosition++;
-
     if (this.currentPosition > this.lastImg) {
       this.currentPosition = 0;
     }
-
     document.getElementById("img-carousel").src = this.tableauImage[this.currentPosition];
     document.getElementById("text-carousel").textContent = this.tableauText[this.currentPosition];
   }
-
-
   // propriété previous
   previous() {
     this.currentPosition--;
     //  console.log("previous");
-
     if (this.currentPosition < 0) {
       this.currentPosition = this.lastImg;
     }
-
     document.getElementById("img-carousel").src = this.tableauImage[this.currentPosition];
     document.getElementById("text-carousel").textContent = this.tableauText[this.currentPosition];
-
   }
-
-};
+}

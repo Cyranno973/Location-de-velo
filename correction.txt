@@ -4,3 +4,4 @@ nettoyer le code
 mettre en ligne  le code 
 
 
+ajouter si erreur dans le formulaire barre rouge et peut etre un messafge

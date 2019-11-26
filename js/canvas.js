@@ -35,7 +35,6 @@ class Signature {
     context.closePath();
   }
   annuler() {
-
     var m = confirm("Voulez vous vraiment annuler votre réservation?");
     if (m) {
       this.context.clearRect(0, 0, this.w, this.h);
@@ -43,25 +42,14 @@ class Signature {
       document.getElementById("envoieReservation").style.display = "none";
       document.getElementById("annulationReservation").style.display = "none";
       this.dessinPresent = false;
-
-
     } else {
       console.log("pas d'annulation");
     }
-
   }
   effacer() {
-
-    
-
-      this.context.clearRect(0, 0, this.w, this.h);
-
-      this.dessinPresent = true;
-
-
-      console.log("effacement de la signature ");
-    }
-
+    this.context.clearRect(0, 0, this.w, this.h);
+    this.dessinPresent = true;
+    console.log("effacement de la signature ");
   }
 
-
+}
