@@ -13,7 +13,7 @@ class Signature {
     this.h = canvas.height;
     // ici je determine la taille ,les bords de mon élément canvas
     var rect = canvasElt.getBoundingClientRect();
-    // console.log(rect);
+  
 
   }
   dessiner(context, x1, y1, x2, y2) {
@@ -43,13 +43,13 @@ class Signature {
       document.getElementById("annulationReservation").style.display = "none";
       this.dessinPresent = false;
     } else {
-      console.log("pas d'annulation");
+  
     }
   }
   effacer() {
     this.context.clearRect(0, 0, this.w, this.h);
     this.dessinPresent = true;
-    console.log("effacement de la signature ");
+   
   }
 
 }

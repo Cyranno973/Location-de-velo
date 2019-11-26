@@ -15,6 +15,7 @@ class Main {
         navElt.classList.remove("active");
       } else {
         navElt.classList.add("active");
+
       }
     });
     //////////////////////////////Carousel//////////////////////////////
@@ -78,7 +79,7 @@ class Main {
 
     var btnStop = document.getElementById("btnstop");
     btnStop.addEventListener("click", function () {
-   
+
       clearInterval(myDiapo.temps);
       btnStop.style.display = "none";
       btnPlay.style.display = "block";
@@ -185,9 +186,9 @@ class Main {
       e.preventDefault();
       var nomElt = document.getElementById('nom').value;
       var preNomElt = document.getElementById('prenom').value;
- 
+
       if ((nomElt.length > 3) && (preNomElt.length > 3)) {
-      
+
         containerCanvasElt.style.display = "block";
         document.getElementById("canvas").style.display = "block";
         document.getElementById("envoieReservation").style.display = "block";
@@ -199,33 +200,43 @@ class Main {
         localStorage.setItem("prenomUser", preNomElt);
 
       } else {
-
-
-
-        // var aidePseudoElt = document.getElementById("aidePseudo");
-        // aidePseudoElt.textContent = "Veuillez saisir un nom et prenom valide.";
-        // aidePseudoElt.style.display = "inline-block";
+        if (nomElt.length < 3) {
+          var erreurNom = document.getElementById("nom");
+          erreurNom.style.backgroundColor = "	#DC143C";
+          erreurNom.placeholder = "Veuillez saisir un Nom valide";
+    
+        } else {
+          if (preNomElt.length < 3) {
+            var erreurPrenom = document.getElementById("prenom");
+            erreurPrenom.style.backgroundColor = "#DC143C";
+            erreurPrenom.placeholder = "Veuillez saisir un Prenom valide";
+          }
+        }
       }
-
-
-
 
     });
 
+    
     ///////////////////////////// Envoyer //////////////////////////////
     ///////////////////////////// Envoyer //////////////////////////////
     ///////////////////////////// Envoyer //////////////////////////////
-
+    document.getElementById('nom').addEventListener('input',(e) =>{
+      document.getElementById('nom').style.backgroundColor=" rgba(255, 255, 255, 0.1)";
+      
+    });
+    document.getElementById('prenom').addEventListener('input',(e) =>{
+      document.getElementById('prenom').style.backgroundColor=" rgba(255, 255, 255, 0.1)";
+      
+    });
     var confirmationReservation = document.getElementById('envoieReservation');
 
 
     confirmationReservation.addEventListener('click', (e) => {
 
       if (signatureElt.dessinPresent === true) {
-        console.log("le minuteur n'est pas actif");
+
 
         containerCanvasElt.style.display = "none";
-        // document.getElementById("canvas").style.display = "block";
         document.getElementById("envoieReservation").style.display = "none";
         document.getElementById("annulationReservation").style.display = "none";
         signatureElt.effacer(0, 0, this.w, this.h);
@@ -240,7 +251,7 @@ class Main {
           timerElt.minuteur();
 
         }, 1000);
-        console.log('ma reservation est confirmer');
+
 
 
 
@@ -259,7 +270,7 @@ class Main {
     annulation.addEventListener('click', (e) => {
 
 
-      console.log('ma reservation est annuler');
+
 
       signatureElt.annuler(0, 0, this.w, this.h);
     });
@@ -269,12 +280,12 @@ class Main {
     ///////////////////////////// Actulisation de la page //////////////////////////////
     ///////////////////////////// Actulisation de la page //////////////////////////////
     window.addEventListener('load', (event) => {
-      // console.log('La page est pleinement charger');
+
       var nomStocker = localStorage.getItem("nomUser");
       var preNomStocker = localStorage.getItem("prenomUser");
       var minElt = Number(sessionStorage.getItem('min'));
       var secElt = Number(sessionStorage.getItem('sec'));
-      console.log("min :" + minElt + " sec: " + secElt);
+
 
       if ((minElt != null) && (secElt != null)) {
         var stationReserver = sessionStorage.getItem('stationClick');
@@ -284,15 +295,15 @@ class Main {
           timerElt.minuteur();
         }, 1000);
       } else {
-        //  console.log("pas de reservation en cours");
+
       }
-      //console.log(nomStocker);
+
       if ((nomStocker != null) && (preNomStocker != null)) {
-        //    console.log("Il y a un prenom et un nom stocker");
+
         document.getElementById('nom').value = nomStocker;
         document.getElementById('prenom').value = preNomStocker;
       } else {
-        // console.log("Il y a aucun nom ou prenom stocker.");
+
       }
     });
   }

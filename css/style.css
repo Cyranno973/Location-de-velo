@@ -182,7 +182,9 @@ strong {
 
 
 
-
+#nom:focus{
+  background: rgba(255, 255, 255, 0.1);
+}
 
 #tableau {
   color: #fff;
@@ -258,6 +260,7 @@ ul li {
   color: #fff;
 }
 
+
 .login-form input[type="submit"] {
   color: #fff;
   background: #0072ff;
@@ -266,15 +269,11 @@ ul li {
   cursor: pointer;
 }
 
+
+
 .login-form input [type="submit"]:hover {
   background: #005aca;
 }
-
-
-
-
-
-
 
 
 .container-formulaire-canvas {

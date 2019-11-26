@@ -15,7 +15,7 @@ class Diaporama {
   }
   // propriété next
   next() {
-    // console.log("next");
+ 
     this.currentPosition++;
     if (this.currentPosition > this.lastImg) {
       this.currentPosition = 0;
@@ -26,7 +26,6 @@ class Diaporama {
   // propriété previous
   previous() {
     this.currentPosition--;
-    //  console.log("previous");
     if (this.currentPosition < 0) {
       this.currentPosition = this.lastImg;
     }
