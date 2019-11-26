@@ -2,6 +2,6 @@
 capture d'ecran des differentes etatpes de reservation 
 nettoyer le code 
 mettre en ligne  le code 
+1
 
-
-ajouter si erreur dans le formulaire barre rouge et peut etre un messafge
+ajouter si erreur dans le formulaire barre rouge et peut etre un messafe
