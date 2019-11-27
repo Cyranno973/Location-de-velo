@@ -11,7 +11,7 @@ class Main {
     var menuElt = document.querySelector(".menu-toggle");
     var navElt = document.querySelector("nav");
     menuElt.addEventListener('click', (e) => {
-      if (navElt.classList.contains("active") == true) {
+      if (navElt.classList.contains("active") === true) {
         navElt.classList.remove("active");
       } else {
         navElt.classList.add("active");
@@ -187,7 +187,7 @@ class Main {
       var nomElt = document.getElementById('nom').value;
       var preNomElt = document.getElementById('prenom').value;
 
-      if ((nomElt.length > 3) && (preNomElt.length > 3)) {
+      if ((nomElt.length > 2) && (preNomElt.length > 2)) {
 
         containerCanvasElt.style.display = "block";
         document.getElementById("canvas").style.display = "block";
