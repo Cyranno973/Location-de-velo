@@ -33,6 +33,8 @@ class Timer {
       sessionStorage.removeItem("sec");
       sessionStorage.removeItem("stationClick");
       this.minuteurLancer = false;
+    
+      
     }
   }
 }

@@ -111,7 +111,7 @@ class Main {
     ////////////////////////////// Minuteur //////////////////////////////
     ////////////////////////////// Minuteur //////////////////////////////
     ////////////////////////////// Minuteur //////////////////////////////
-    var tpsRestant = 120000000;
+    var tpsRestant = 30000;//120000000
     var timerElt = new Timer(tpsRestant);
     var reserveStation = document.getElementById("minuteurhtml");
 
@@ -164,11 +164,13 @@ class Main {
 
 
     canvasElt.addEventListener('touchmove', (e) => {
+      e.preventDefault();
       if (signatureElt.saDessine === true) {
         signatureElt.dessiner(signatureElt.context, signatureElt.x, signatureElt.y, e.touches[0].clientX - canvasElt.getBoundingClientRect().left, e.touches[0].clientY - canvasElt.getBoundingClientRect().top);
         signatureElt.x = e.touches[0].clientX - canvasElt.getBoundingClientRect().left;
         signatureElt.y = e.touches[0].clientY - canvasElt.getBoundingClientRect().top;
         signatureElt.dessinPresent = true;
+
       }
     });
 
@@ -249,6 +251,8 @@ class Main {
         timerElt.interval = setInterval(function () {
 
           timerElt.minuteur();
+       
+    
 
         }, 1000);
 
@@ -282,20 +286,30 @@ class Main {
     window.addEventListener('load', (event) => {
 
       var nomStocker = localStorage.getItem("nomUser");
-      var preNomStocker = localStorage.getItem("prenomUser");
+      var preNomStocker = localStorage.getItem("prenomUser");    ;
+      
       var minElt = Number(sessionStorage.getItem('min'));
       var secElt = Number(sessionStorage.getItem('sec'));
 
+console.log(minElt+"m"+secElt);
 
-      if ((minElt != null) && (secElt != null)) {
+
+      if ((minElt === 0) && (secElt === 0)) {
+
+
+        document.getElementById('minuteurStart').textContent = " ";
+
+        
+      } else {
+        
         var stationReserver = sessionStorage.getItem('stationClick');
         reserveStation.textContent = "Une reservation au nom de : " + localStorage.getItem("nomUser") + " " + localStorage.getItem("prenomUser") + " est en cours à la station : " + stationReserver;
         timerElt.actualisationTempsRestant(((minElt * 60) + secElt) * 1000);
         timerElt.interval = setInterval(function () {
           timerElt.minuteur();
         }, 1000);
-      } else {
-
+    
+        
       }
 
       if ((nomStocker != null) && (preNomStocker != null)) {
