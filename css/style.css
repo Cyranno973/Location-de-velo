@@ -25,7 +25,7 @@ header #logo {
   float: left;
   font-weight: bold;
   font-size: 35px;
-  background-image: url("/images/gold1.jpg");
+  background-image: url("../images/gold1.jpg");
   background-size: cover;
   background-clip: text;
   -webkit-background-clip: text;
